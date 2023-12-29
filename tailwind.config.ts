@@ -8,11 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        'lilita': ['Lilita One', 'sans-serif'],
+        'lora': ['Lato', 'sans-serif']
       },
+      
+      container: {
+        center: true,
+        padding: "15px",
+      },
+
+      colors: {
+        bluvee: "#40C9FF",
+        pinkee: "#E81CFF"
+      }
     },
   },
   plugins: [],
