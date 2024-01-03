@@ -23,14 +23,14 @@ const Hero: React.FC<HeroProps> = () => {
           <span className="highlight__text"> Hand-writing number </span>
           image <br /> with an intelligible quality
         </h1>
-        <p className="text-base font-lato ">
+        <p className="text-base font-lato text-neutral-400">
           Get to generate the random hand-writing number image <br />
           using GANs model.
         </p>
 
         <button
           type="button"
-          className="text-white bg-blue-600 py-2 px-2 rounded-md font-lato"
+          className="text-white bg-blue-600 py-3 px-8 rounded-md font-lato font-bold"
         >
           Generate Images
         </button>
