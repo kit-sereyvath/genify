@@ -1,8 +1,27 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = () => {
+  const [img, setImg] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const generate_img = () => {
+    setLoading(true);
+    const generate = async () => {
+      const res = await fetch(`${process.env.backend}`);
+      const imageBlob = await res.blob();
+      const imageObjectURL = URL.createObjectURL(imageBlob);
+      setImg(imageObjectURL);
+      setLoading(false);
+    };
+    console.log(process.env.backend)
+
+    generate();
+  };
+
   const imageUrls = [
     "./img/image1.png",
     "./img/image2.png",
@@ -28,12 +47,27 @@ const Hero: React.FC<HeroProps> = () => {
           using GANs model.
         </p>
 
-        <button
-          type="button"
-          className="text-white bg-blue-600 py-3 px-8 rounded-md font-lato font-bold"
-        >
-          Generate Images
-        </button>
+        {loading ? (
+          <button
+            type="button"
+            className="text-white bg-green-500 py-3 px-8 rounded-md font-lato font-bold"
+            onClick={generate_img}
+            disabled
+          >
+            Loading...
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="text-white bg-blue-600 py-3 px-8 rounded-md font-lato font-bold"
+            onClick={generate_img}
+          >
+            Generate Images
+          </button>
+        )}
+
+        <img src={img} alt="" />
+        <div className="h-6"></div>
       </div>
       <div className="grid grid-cols-4 gap-5">
         <div>
