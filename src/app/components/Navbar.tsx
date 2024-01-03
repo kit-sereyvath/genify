@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* Right */}
 
         <div className='flex gap-x-5'>
-          <button className='font-lilita rounded-xl px-5 py-2.5 bg-gradient-to-r from-bluvee to-pinkee text'>
+          <button className='font-lilita rounded-xl px-5 py-2.5 bg-transparent border-2'>
             Log In
           </button>
           <button className='font-lilita rounded-xl px-5 py-2.5 bg-gradient-to-r from-bluvee to-pinkee text'>
